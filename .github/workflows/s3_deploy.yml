@@ -15,7 +15,7 @@ jobs:
       run: yarn && yarn build:react
     - name: Deploy React MFE to S3 bucket
       run: aws s3 sync ./packages/react-app/build/ s3://${{ AWS_REACT_BUCKET_NAME }} --delete
-      - name: Build NG
+    - name: Build NG
       run: yarn && yarn build:NG
     - name: Deploy React MFE to S3 bucket
       run: aws s3 sync ./packages/ng-app/dist/ng-app/ s3://${{ AWS_NG_BUCKET_NAME }} --delete
