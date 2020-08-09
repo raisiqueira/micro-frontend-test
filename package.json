@@ -7,5 +7,9 @@
   "private": true,
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "scripts": {
+    "build:react": "SKIP_PREFLIGHT_CHECK=true yarn workspace react-app build",
+    "build:ng": "yarn workspace ng-app build"
+  }
 }
