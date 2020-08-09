@@ -14,9 +14,9 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: Build React App
         run: yarn && yarn build:react
-      - name: Deploy app build to S3 bucket
+      - name: Deploy React build to S3 bucket
         run: aws s3 sync ./packages/react-app/build/ s3://${{secrets.AWS_REACT_BUCKET_NAME}} --delete
       - name: Build NG App
         run: yarn && yarn build:ng
-      - name: Deploy app build to S3 bucket
+      - name: Deploy NG build to S3 bucket
         run: aws s3 sync ./packages/ng-app/dist/ng-app/ s3://${{secrets.AWS_NG_BUCKET_NAME}} --delete
